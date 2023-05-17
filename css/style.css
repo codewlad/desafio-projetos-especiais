@@ -1,0 +1,229 @@
+:root {
+    font-size: 62.5%;
+}
+
+* {
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 1.6rem;
+    background-color: #454545;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    font-family: 'Poppins', sans-serif;
+    color: #FFFFFF;
+}
+
+#page {
+    max-width: 100rem;
+    width: 80%;
+    min-height: 50rem;
+    margin: 0 auto;
+    padding: 3rem 5rem 0 5rem;
+
+    background: #000000 url("../assets/bg.jpg") no-repeat center top;
+
+    border-radius: 2rem;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    animation: appearFromTheTop 1s;
+}
+
+@keyframes appearFromTheTop {
+    0% {
+        opacity: 0;
+        top: -5rem;
+    }
+
+    100% {
+        opacity: 1;
+        top: 0px;
+    }
+}
+
+header img {
+    max-width: 150px;
+    height: auto;
+}
+
+ul {
+    display: inline-flex;
+    gap: 5rem;
+    height: 100%;
+}
+
+ul li {
+    list-style: none;
+}
+
+ul a {
+    display: flex;
+    align-items: center;
+    
+    text-decoration: none;
+    color: #fe0000;
+    transition: 0.3s;
+}
+
+ul a:hover {
+    color: #ffffff;
+}
+
+main {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+}
+
+#wrapper-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 1rem;
+    width: 60%;
+    font-size: 1.4rem;
+    padding-bottom: 3rem;
+    position: relative;
+    animation: appearFromTheRight 1s;
+}
+
+@keyframes appearFromTheRight {
+    0% {
+        opacity: 0;
+        right: 5rem;
+    }
+
+    100% {
+        opacity: 1;
+        right: 0px;
+    }
+}
+
+#wrapper-image {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    width: 40%;    
+}
+
+#wrapper-image img {
+    position: relative;
+    animation: appearFromTheLeft 1s;
+}
+
+@keyframes appearFromTheLeft {
+    0% {
+        opacity: 0;
+        right: -5rem;
+    }
+
+    100% {
+        opacity: 1;
+        right: 0px;
+    }
+}
+
+.cropped {
+    height: 500px;
+    object-fit: none;
+    object-position: 0 8rem;
+}
+
+#characters {
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+    animation: appearFromTheBottom 1s;
+}
+
+@keyframes appearFromTheBottom {
+    0% {
+        opacity: 0;
+        top: 5rem;
+    }
+
+    100% {
+        opacity: 1;
+        top: 0px;
+    }
+}
+
+#characters > div{
+    margin: 0 auto;
+    max-width: 342px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+#btnChris {
+    background: url("../assets/btn_chris.png") no-repeat center center;
+}
+
+#btnJill {
+    background: url("../assets/btn_jill.png") no-repeat center center;
+}
+
+#btnBarry {
+    background: url("../assets/btn_barry.png") no-repeat center center;
+}
+
+#btnRebecca {
+    background: url("../assets/btn_rebecca.png") no-repeat center center;
+}
+
+#btnAlbert {
+    background: url("../assets/btn_albert.png") no-repeat center center;
+}
+
+#btnUmbrella {
+    background: url("../assets/btn_umbrella.png") no-repeat center center;
+    filter: grayscale(100%);
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+#btnUmbrella span {
+    position: relative;
+    animation-name: show;
+    animation-duration: .3s;
+}
+
+@keyframes show {
+    from {
+        opacity: 0;
+        top:28px;
+    }
+    to {
+        opacity: 1;
+        top:0px;
+    }
+}
+
+#btnChris, #btnJill, #btnBarry, #btnRebecca, #btnAlbert, #btnUmbrella {
+    background-size: cover;
+    width: 10rem;
+    height: 10rem;
+    transition-duration: .3s;
+}
+
+#btnChris, #btnJill, #btnBarry, #btnRebecca, #btnAlbert {
+    cursor: pointer;
+}
