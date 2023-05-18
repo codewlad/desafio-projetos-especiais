@@ -11,11 +11,8 @@
 body {
     font-size: 1.6rem;
     background-color: #454545;
-    height: 100vh;
-
     display: flex;
     align-items: center;
-
     font-family: 'Poppins', sans-serif;
     color: #FFFFFF;
 }
@@ -24,17 +21,18 @@ body {
     max-width: 100rem;
     width: 80%;
     min-height: 50rem;
-    margin: 0 auto;
+    margin: 2rem auto 2rem;
     padding: 3rem 5rem 0 5rem;
 
     background: #000000 url("../assets/bg.jpg") no-repeat center top;
 
     border-radius: 2rem;
+    box-shadow: .5rem .5rem .6rem 0 rgba(32, 32, 32, 0.7);
 }
 
 header {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between;    
     position: relative;
     animation: appearFromTheTop 1s;
 }
@@ -47,12 +45,12 @@ header {
 
     100% {
         opacity: 1;
-        top: 0px;
+        top: 0;
     }
 }
 
 header img {
-    max-width: 150px;
+    max-width: 15rem;
     height: auto;
 }
 
@@ -91,9 +89,10 @@ main {
     justify-content: flex-end;
     gap: 1rem;
     width: 60%;
+    position: relative;
     font-size: 1.4rem;
     padding-bottom: 3rem;
-    position: relative;
+    
     animation: appearFromTheRight 1s;
 }
 
@@ -105,7 +104,7 @@ main {
 
     100% {
         opacity: 1;
-        right: 0px;
+        right: 0;
     }
 }
 
@@ -114,7 +113,7 @@ main {
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    width: 40%;    
+    width: 40%;
 }
 
 #wrapper-image img {
@@ -130,18 +129,18 @@ main {
 
     100% {
         opacity: 1;
-        right: 0px;
+        right: 0;
     }
 }
 
 .cropped {
-    height: 500px;
+    height: 50rem;
     object-fit: none;
     object-position: 0 8rem;
 }
 
 #characters {
-    min-height: 500px;
+    min-height: 50rem;
     display: flex;
     flex-direction: column;
     justify-content: center;    
@@ -159,15 +158,16 @@ main {
 
     100% {
         opacity: 1;
-        top: 0px;
+        top: 0;
     }
 }
 
 #characters > div{
     margin: 0 auto;
-    max-width: 342px;
+    max-width: 34.2rem;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 2rem;
 }
 
@@ -209,11 +209,11 @@ main {
 @keyframes show {
     from {
         opacity: 0;
-        top:28px;
+        top:2.8rem;
     }
     to {
         opacity: 1;
-        top:0px;
+        top:0;
     }
 }
 
@@ -226,4 +226,112 @@ main {
 
 #btnChris, #btnJill, #btnBarry, #btnRebecca, #btnAlbert {
     cursor: pointer;
+}
+
+@media only screen and (max-width: 800px) {
+    body {
+        height: auto;
+    }
+
+    #page {
+        margin: 2rem auto 2rem;
+        padding: 3rem 5rem;
+    }
+
+    main {
+        flex-direction: column;
+    }
+
+    #wrapper-text, #wrapper-image {
+        width: 100%;
+    }
+
+    #wrapper-text h1, #wrapper-text p {
+        text-align: center;
+    }
+
+    .cropped {
+        object-position: 0 0;
+    }
+}
+
+@media only screen and (max-width: 630px) {
+    body {
+        height: auto;
+        background: #000000;
+        min-width: 21.5rem;
+    }
+
+    header {
+        position: fixed;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        top: 0;
+        right: 0;
+        padding: 2rem;
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(.2rem);
+        z-index: 1;
+    }
+
+    header ul {
+        padding: 0;
+        gap: 2rem;
+    }
+
+    #page {
+        margin: 0rem;
+        padding: 3rem;
+        width: 100%;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    main {
+        margin-top: 10rem;
+        flex-direction: column;
+    }
+
+    #wrapper-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        gap: 1rem;
+        width: 100%;
+        position: relative;
+        font-size: 1.4rem;
+        padding-bottom: 3rem;
+        
+        animation: appearFromTheRight 1s;
+    }
+
+    #wrapper-text h1, #wrapper-text p {
+        text-align: center;
+    }
+
+    #wrapper-image {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+    }
+
+    .cropped {
+        height: 50rem;
+        object-fit: none;
+        object-position: 0 0;
+    }
+
+    #characters {
+        min-height: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;    
+        align-items: center;
+        gap: 2rem;
+        position: relative;
+        animation: appearFromTheBottom 1s;
+    }
 }
